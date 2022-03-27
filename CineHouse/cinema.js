@@ -19,17 +19,15 @@ const testarAdicionarFilme = () => {
 // testarAdicionarFilme()
 
 const buscarFilme = codigo => {
-  for (let filme of catalogo) {
-    if (filme.codigo === codigo) {
-      console.log(`O filme de código ${codigo} se chama ${filme.titulo}`)
-    }
-  }
+  let resultado = catalogo.filter(filme => filme.codigo == codigo)[0]
+  console.log(resultado ? `O filme de código ${codigo} se chama ${resultado.titulo}` : `Não existe filme cujo código seja ${codigo}`)
 }
 const testarBuscarFilme = () => {
   buscarFilme(1)
   buscarFilme(2)
+  buscarFilme(3)
 }
-// testarBuscarFilme()
+testarBuscarFilme()
 
 const alterarStatusEmCartaz = codigo => {
   for (let filme of catalogo) {
