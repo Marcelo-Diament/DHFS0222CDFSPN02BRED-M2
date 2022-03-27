@@ -26,6 +26,24 @@ Registro de alterações (em ordem cronológica decrescente).
 
 ### Módulo 02 - Aula 02 - CineHouse | Extra
 
+* **doc: [#M2A02-pt03] Adicionando documentação**
+_Adicionando detalhes sobre as etapas realizadas na parte 03, Calculadora (changelog)._
+### Módulo 02 - Aula 02 - Calculadora | Parte 03
+
+* **feat: [#M2A02-pt03] Adicionando função dividir com condicional e testando**
+_Criando a função `dividir` - que recebe 2 números e retorna a divisão (a menos que o segundo número seja 0) - e testando._
+
+* **feat: [#M2A02-pt03] Adicionando função multiplicar e testando**
+_Criando a função `multiplicar` - que recebe 2 números e retorna a multiplicação - e testando._
+
+* **feat: [#M2A02-pt03] Adicionando função subtrair e testando**
+_Criando a função `subtrair` - que recebe 2 números e retorna a subtração - e testando._
+
+* **feat: [#M2A02-pt03] Criando projeto Calculadora, adicionando função somar e testando**
+_Criando a pasta `Calculadora` e a função `somar` - que recebe 2 números e retorna a soma - e testando._
+
+### Módulo 02 - Aula 02 - CineHouse | Extra
+
 * **doc: [#M2A02] Adicionando documentação**
 _Adicionando detalhes sobre as etapas realizadas (changelog)._
 
