@@ -30,21 +30,55 @@ Práticas referentes a Aula 01
 
 #### Parte 01
 
-* No terminal verificar se o *node* foi instalado (`node -v`)
+* No terminal verificar se o *node* foi instalado
 
-* Criar pasta para projeto, chamada CineHouse (`mkdir CineHouse`)
+```sh
+node -v
+```
 
-* Criar arquivo chamado *cinema.js* (`cd CineHouse && touch cinema.js`), nele criar uma variável chamada cinema e esta deverá receber um valor como nome da loja
+* Criar pasta para projeto, chamada CineHouse
+
+```sh
+mkdir CineHouse
+```
+
+* Criar arquivo chamado *cinema.js*, nele criar uma variável chamada cinema e esta deverá receber um valor como nome da loja
+
+```sh
+cd CineHouse && touch cinema.js
+```
+
+```js
+const cinema = "CineMarco"
+```
 
 #### Parte 02
 
 * Executar `npm init` e verificar as mudanças que ocorreram na pasta e arquivos novos adicionados ao projeto
 
+```sh
+npm init
+
+# Preencher as perguntas conforme preferências
+```
+
 * No arquivo *cinema.js* passar a variável anteriormente criada como parâmetro do `console.log`, a fim de que ao executar o arquivo
+
+```js
+console.log(cinema)
+```
 
 * Executar o arquivo
 
-* Instalar o pacote *nodemon* (`npm i --save -D nodemon`)
+```sh
+node cinema.js
+```
+
+* Instalar o pacote *nodemon*
+
+```sh
+npm i --save -D nodemon
+```
 
 * Analisar a pasta *node_modules*
 
@@ -55,6 +89,10 @@ Práticas referentes a Aula 02
 #### Parte 01
 
 * No arquivo criado na última aula (*cinema.js*), deve ser criada uma variável do tipo *array* chamada catalogo. Esta será um *array* de objetos, onde cada objeto representará um filme.
+
+```js
+const catalogo = []
+```
 
 * O filme deve conter os seguintes atributos:
 
@@ -72,42 +110,206 @@ Práticas referentes a Aula 02
 
 * Deverão ser criados dois registros de filmes (de acordo com sua preferência). É importante apenas que um deles receba o valor de `true` na propriedade `emCartaz` e o outro o valor `false`.
 
+```js
+const catalogo = [{
+        codigo: 1,
+        titulo: "O Poderoso Chefão",
+        duracao: 2.91,
+        atores: ["Al Pacino", "Marlon Brando", "Diane Keaton", "Robert De Niro"],
+        anoDeLancamento: 1972,
+        emCartaz: true
+    },
+    {
+        codigo: 2,
+        titulo: "O Mágico de Oz",
+        duracao: 1.86,
+        atores: ["Judy Garland", "Jack Haley", "Bert Lahr", "Frank Morgan"],
+        anoDeLancamento: 1939,
+        emCartaz: false
+    }
+]
+```
+
 #### Parte 02
 
 * `adicionarFilme` | A função deve receber os parâmetros com as informações necessárias para criar um objeto do tipo Filme.
 
+```js
+const adicionarFilme = filme => catalogo.push(filme)
+const testarAdicionarFilme = () => {
+    console.log(`Antes da adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
+    adicionarFilme({
+        codigo: 3,
+        titulo: "Cidadão Kane",
+        duracao: 1.98,
+        atores: ["Orson Welles", "Joseph Cotten", "Dorothy Comingore", "William Alland"],
+        anoDeLancamento: 1941,
+        emCartaz: false
+    })
+    console.log(`Após adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
+}
+testarAdicionarFilme()
+```
+
 * `buscarFilme` | A função deve receber como parâmetro o número identificador do filme e fazer busca no *array* de catálogo e ao fim retornar o objeto encontrado. Preferencialmente, retorne de forma mais amigável ao usuário final (pode utilizar `console` para não retornar apenas o objeto).
 
+```js
+const buscarFilme = codigo => {
+    for (let filme of catalogo) {
+        if (filme.codigo === codigo) {
+            console.log(`O filme de código ${codigo} se chama ${filme.titulo}`)
+        }
+    }
+}
+const testarBuscarFilme = () => {
+    buscarFilme(1)
+    buscarFilme(2)
+}
+testarBuscarFilme()
+```
+
 * `alterarStatusEmCartaz` | A função deve receber como parâmetro o número identificador do filme escolhido, buscar o filme com base no parâmetro recebido e alterar o status existente da propriedade `emCartaz` (se estava como `true`, alterar para `false`, e vice e versa).
+
+```js
+const alterarStatusEmCartaz = codigo => {
+    for (let filme of catalogo) {
+        if (filme.codigo === codigo) {
+            console.log(`Status do filme ${filme.titulo} (código ${codigo}) antes: ${filme.emCartaz}`)
+            filme.emCartaz = !filme.emCartaz
+            console.log(`Status do filme ${filme.titulo} (código ${codigo}) depois: ${filme.emCartaz}`)
+        }
+    }
+}
+const testarAlterarStatusEmCartaz = () => {
+    alterarStatusEmCartaz(1)
+    alterarStatusEmCartaz(2)
+}
+testarAlterarStatusEmCartaz()
+```
 
 #### Parte 03
 
 * Criar uma pasta nova - *Calculadora* - (separa dos projetos anteriores para perdermos onde essa prática será feita).
 
+```sh
+cd .. && mkdir Calculadora
+```
+
 * Criar um arquivo *somar.js* que contenha uma função chamada `somar`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a soma dos mesmos.
+
+```sh
+touch somar.js && code ./somar.js
+```
+
+```js
+const somar = (num1, num2) => num1 + num2
+console.log(`Função somar recebendo 1 e 2 retorna: ${somar(1,2)}`)
+
+module.exports = somar
+```
 
 * Criar um arquivo *subtrair.js* que contenha uma função chamada `subtrair`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a diferença entre eles.
 
+```sh
+touch subtrair.js && code ./subtrair.js
+```
+
+```js
+const subtrair = (num1, num2) => num1 - num2
+console.log(`Função subtrair recebendo 10 e 2 retorna: ${subtrair(10,2)}`)
+
+module.exports = subtrair
+```
+
 * Criar um arquivo *multiplicar.js* que contenha uma função chamada `multiplicar`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a multiplicação dos mesmos.
+
+```sh
+touch multiplicar.js && code ./multiplicar.js
+```
+
+```js
+const multiplicar = (num1, num2) => num1 * num2
+console.log(`Função multiplicar recebendo 10 e 2 retorna: ${multiplicar(10,2)}`)
+console.log(`Função multiplicar recebendo 10 e 0 retorna: ${multiplicar(10,0)}`)
+console.log(`Função multiplicar recebendo 0 e 10 retorna: ${multiplicar(0,10)}`)
+console.log(`Função multiplicar recebendo 0 e 0 retorna: ${multiplicar(0,0)}`)
+
+module.exports = multiplicar
+```
 
 * Criar um arquivo *dividir.js* que contenha uma função chamada `dividir`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a divisão dos mesmos. Importante: contemplar o cenário em que se algum dos dois parâmetros é zero, a função
 retornará "Não se pode dividir por zero".
 
 > **ERRATA**: na realidade, apenas o segundo parâmetro não pode ser 0. Isso por que não se pode dividir um número por 0, mas **é possível dividir 0 por qualquer número (que não seja 0)**.
 
+```sh
+touch dividir.js && code ./dividir.js
+```
+
+```js
+const dividir = (num1, num2) => num2 === 0 ? "Não se pode dividir por zero" : num1 * num2
+/**
+ * NOTA DE ESCLARECIMENTO 
+ * O exercício pede para retornarmos "Não se pode dividir por zero" caso qualquer um dos dois números seja 0.
+ * No entanto, não se pode dividir um número por 0, mas é possível dividir 0 por qualquer número (que não seja 0).
+ */
+console.log(`Função dividir recebendo 10 e 2 retorna: ${dividir(10,2)}`)
+console.log(`Função dividir recebendo 10 e 0 retorna: ${dividir(10,0)}`)
+console.log(`Função dividir recebendo 0 e 10 retorna: ${dividir(0,10)}`)
+console.log(`Função dividir recebendo 0 e 0 retorna: ${dividir(0,0)}`)
+
+module.exports = dividir
+```
+
 #### Parte 04
 
-* Criar um arquivo *calculadora.js* (`touch calculadora.js`), em que devemos importar os quatro arquivos feitos anteriormente.
+* Criar um arquivo *calculadora.js*, em que devemos importar os quatro arquivos feitos anteriormente.
+
+```sh
+touch calculadora.js && code ./calculadora.js
+```
+
+```js
+const somar = require('./somar')
+const subtrair = require('./subtrair')
+const multiplicar = require('./multiplicar')
+const dividir = require('./dividir')
+```
 
 * Executar a função que permite somar e a função que permite subtrair, passando como argumentos dois números quaisquer. Mostrar no *console* os resultados.
 
+```js
+console.log(`Função somar recebendo 1 e 2 retorna: ${somar(1,2)}`)
+console.log(`Função subtrair recebendo 10 e 2 retorna: ${subtrair(10,2)}`)
+```
+
 * Executar a função que permite multiplicar, passando como argumentos dois números quaisquer. Mostrar no *console* o resultado.
+
+```js
+console.log(`Função multiplicar recebendo 10 e 2 retorna: ${multiplicar(10,2)}`)
+```
 
 * Executar a função que permite multiplicar, passando agora como um dos dois argumentos, o número zero. Mostrar no *console* o resultado.
 
+```js
+console.log(`Função multiplicar recebendo 10 e 0 retorna: ${multiplicar(10,0)}`)
+console.log(`Função multiplicar recebendo 0 e 10 retorna: ${multiplicar(0,10)}`)
+console.log(`Função multiplicar recebendo 0 e 0 retorna: ${multiplicar(0,0)}`)
+```
+
 * Executar a função que permite dividir, passando como argumentos dois números quaisquer. Mostrar no *console* o resultado.
 
+```js
+console.log(`Função dividir recebendo 10 e 2 retorna: ${dividir(10,2)}`)
+console.log(`Função dividir recebendo 0 e 10 retorna: ${dividir(0,10)}`)
+```
+
 * Executar a função que permite dividir, passando agora como um dos dois argumentos, o número zero. Mostrar no *console* o resultado.
+
+```js
+console.log(`Função dividir recebendo 10 e 0 retorna: ${dividir(10,0)}`)
+console.log(`Função dividir recebendo 0 e 0 retorna: ${dividir(0,0)}`)
+```
 
 ### Módulo 02 | Aula 03 - JSON, mais condicionais e ciclos
 
