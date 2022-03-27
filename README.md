@@ -24,7 +24,7 @@ O que é necessário para acompanhar a prática?
 
 Replicação dos enunciados para facilitar a compreensão dos exercícios.
 
-### Módulo 02 | Aula 01
+### Módulo 02 | Aula 01 - Introdução a NodeJS
 
 Práticas referentes a Aula 01
 
@@ -48,7 +48,7 @@ Práticas referentes a Aula 01
 
 * Analisar a pasta *node_modules*
 
-### Módulo 02 | Aula 02
+### Módulo 02 | Aula 02 - Revisão de funções, condicionais e Arrays
 
 Práticas referentes a Aula 02
 
@@ -109,9 +109,40 @@ retornará "Não se pode dividir por zero".
 
 * Executar a função que permite dividir, passando agora como um dos dois argumentos, o número zero. Mostrar no *console* o resultado.
 
+### Módulo 02 | Aula 03 - JSON, mais condicionais e ciclos
+
+Práticas referentes a Aula 03
+
+#### Parte 01
+
+* Chegou o momento de deixarmos de utilizar o objeto literal integrado ao arquivo principal. Vamos modularizar essa nossa base de informações de filmes. Para isso crie, na pasta raíz do projeto, uma nova pasta chamada *database* (aqui será alocado qualquer arquivo que nos sirva como base de informações a serem consultadas).
+
+* Crie, dentro da pasta, um arquivo chamado *catalogo.json*.
+
+* Passe para esse arquivo todos os registros criados por você no arquivo *cinema.js*. E exclua o objeto `catalogo` do arquivo citado.
+
+> Lembre-se de que a forma de escrita de objeto para JSON, apesar de serem bem parecidas, não são iguais.
+
+* Perceba que ainda precisaremos das informações dos filmes para que as funções criadas no arquivo *cinema.js* funcione. Para isso você deve importar o arquivo JSON e armazená-los em uma variável.
+
+* Teste as funções novamente certificando-se de que a migração de arquivo e formato não prejudicou seu funcionamento.
+
+#### Parte 02
+
+* `listarTodosOsFilmes` | A função deve percorrer toda a lista de filmes armazenada no catálogo utilizando o *loop* `for` e retornar as informações de maneira amigável ao usuário.
+
+* `listarFilmesEmCartaz` | A função deve percorrer toda a lista de filmes armazenada no catálogo utilizando o *loop* `for` e retornar os filmes disponíveis em cartaz - as informações de maneira amigável ao usuário.
+
+* `alterarStatusEmCartaz` | A função deve receber como parâmetro o número identificador do filme escolhido, buscar o filme com base no parâmetro recebido e alterar o status existente da propriedade `emCartaz` (se estava como `true`, alterar para `false`, e vice e versa). O escopo é igual ao da aula passada, porém o desafio é ao invés de usarmos a estrutura condicional `if` que estamos habituados, mudar para `if` ternário.
+
 ## Changelog
 
 Registro de alterações (em ordem cronológica decrescente).
+
+### Módulo 02 - Aula 03 - CineHouse | Extra
+
+* **doc: [#M2A03] Adicionando enunciados da Aula 03 do Módulo 02**
+_Adicionando os enunciados da Aula 03 do Módulo 02 (projeto CineHouse) e atualizando o changelog._
 
 ### Módulo 02 - Aula 02 - CineHouse e Calculadora | Extra
 
