@@ -139,6 +139,17 @@ Práticas referentes a Aula 03
 
 Registro de alterações (em ordem cronológica decrescente).
 
+### Módulo 02 - Aula 03 - CineHouse | Parte 01
+
+* **doc: [#M2A03-pt01] Atualizando changelog da Parte 01 da Aula 03 do Módulo 02**
+_Atualizando o changelog._
+
+* **feat: [#M2A03-pt01] Importando o catalogo em JSON para *cinema.js***
+_Importando o JSON `catalogo` e testando as funções de cinema.js novamente._
+
+* **feat: [#M2A03-pt01] Movendo o array `catalogo` para um arquivo JSON em *database/catalogo.json***
+_Movendo o `catalogo` para um arquivo à parte (catalogo.json) e realizando os ajustes necessários._
+
 ### Módulo 02 - Aula 03 - CineHouse | Extra
 
 * **doc: [#M2A03] Adicionando enunciados da Aula 03 do Módulo 02**
