@@ -24,7 +24,10 @@ O que é necessário para acompanhar a prática?
 
 Registro de alterações (em ordem cronológica decrescente).
 
-### Módulo 02 - Aula 02 - CineHouse | Extra
+### Módulo 02 - Aula 02 - Calculadora | Extra
+
+* **fix: [#M2A02-pt03] Ajustando título da etapa de documentaçao da Calculadora no changelog**
+_Atualizando o título "Módulo 02 - Aula 02 - Calculadora | Extra" e atualizando o changelog._
 
 * **doc: [#M2A02-pt03] Adicionando documentação**
 _Adicionando detalhes sobre as etapas realizadas na parte 03, Calculadora (changelog)._
