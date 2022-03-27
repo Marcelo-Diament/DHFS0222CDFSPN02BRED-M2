@@ -585,6 +585,17 @@ ___
 
 Registro de alterações (em ordem cronológica decrescente).
 
+### Documentação | Resoluções
+
+* **doc: [#M2] Atualizando changelog**
+_Atualizando o changelog._
+
+* **doc: [#M2] Adicionando resoluções a cada enunciado - 2**
+_Atualizando o README.md com esoluções de cada etapa (Aula 03 e refatoração)._
+
+* **doc: [#M2] Adicionando resoluções a cada enunciado**
+_Atualizando o README.md com esoluções de cada etapa (Aulas 01 e 02)._
+
 ### Refactor | Melhorando nosso código - CineHouse
 
 * **doc: [#M2] Atualizando changelog com melhorias**
