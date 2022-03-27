@@ -11,5 +11,8 @@
     "javascript"
   ],
   "author": "Marcelo Diament",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
