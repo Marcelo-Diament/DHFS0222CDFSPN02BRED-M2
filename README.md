@@ -44,7 +44,7 @@ Práticas referentes a Aula 01
 
 * Executar o arquivo
 
-* Instalar o pacote *nodemon* (`npm i -d nodemon`)
+* Instalar o pacote *nodemon* (`npm i --save -D nodemon`)
 
 * Analisar a pasta *node_modules*
 
@@ -139,6 +139,29 @@ Práticas referentes a Aula 03
 
 Registro de alterações (em ordem cronológica decrescente).
 
+### Refactor | Melhorando nosso código - CineHouse
+
+* **doc: [#M2] Atualizando changelog com melhorias**
+_Atualizando o changelog._
+
+* **chore: [#M2] Adicionando scripts start e dev**
+_Atualizando o package.json com scripts start (node) e dev (nodemon)._
+
+* **fix: [#M2] Ajustando indentação e comentando const não utilizada**
+_Atualizando o cinema.js comendando a variável `cinema` e ajustando indentação._
+
+* **refactor: [#M2] Refatorando `listarFilmesEmCartaz` usando `filter`,  `for/of` e a função de apoio `mostrarDetalhesFilme`**
+_Refatorando `listarFilmesEmCartaz` usando `filter` , `for/of` e a função de apoio `mostrarDetalhesFilme` ._
+
+* **refactor: [#M2] Refatorando `listarTodosOsFilmes` usando `forEach`,  `arrowFunction` e interpolação**
+_Refatorando `listarTodosOsFilmes` usando `forEach` , `arrowFunction` e interpolação._
+
+* **refactor: [#M2] Refatorando `alterarStatusEmCartaz` usando `buscarFilme` e desestruturação**
+_Refatorando `alterarStatusEmCartaz` usando `buscarFilme` e desestruturação._
+
+* **refactor: [#M2] Refatorando `buscarFilme` com `filter` e `if` ternário**
+_Refatorando `buscarFilme` com `filter` e `if` ternário._
+
 ### Hotfix | Ajustando a função `adicionarFilme`
 
 * **doc: [#M2] Atualizando changelog com o HotFix**
@@ -153,7 +176,7 @@ _Ajustando a função `adicionarFilme` - estava adicionando o catálogo ao invé
 _Atualizando o changelog._
 
 * **fix: [#M2A03-pt02] Comentando `testarAlterarStatusEmCartaz`**
-_Comentando o teste `testarAlterarStatusEmCartaz`._
+_Comentando o teste `testarAlterarStatusEmCartaz` ._
 
 * **feat: [#M2A03-pt02] Usando `if` ternário na função `alterarStatusEmCartaz`**
 _Atualizando a função `alterarStatusEmCartaz` para usar o `if` ternário (ainda que a solução anterior fosse mais enxuta) e testando._
@@ -266,7 +289,7 @@ _Adicionando detalhes sobre a prática e as etapas realizadas (changelog)._
 ### Módulo 02 - Aula 01 - CineHouse | Parte 02
 
 * **feat: [#M2A01-pt02] Adicionando *nodemon* como dependência de desenvolvimento**
-_Instalando nodemon como devDependency com `npm i -d nodemon` ._
+_Instalando nodemon como devDependency com `npm i --save -D nodemon` ._
 
 * **feat: [#M2A01-pt02] Exibindo valor da variável cinema com `console.log()`**
 _Exibindo o valor de `cinema` com `console.log()` ._
