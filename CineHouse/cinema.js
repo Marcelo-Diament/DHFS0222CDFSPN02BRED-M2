@@ -1,6 +1,6 @@
 const catalogo = require('./database/catalogo.json')
 
-const cinema = "CineMarco"
+// const cinema = "CineMarco"
 // console.log(cinema)
 
 const adicionarFilme = filme => catalogo.push(filme)
@@ -51,13 +51,13 @@ const testarAlterarStatusEmCartaz = () => {
 const mostrarDetalhesFilme = filme => {
   const { titulo, codigo, anoDeLancamento, duracao, atores, emCartaz } = filme
   return `
-      Título: ${titulo}
-      Código: ${codigo}
-      Ano: ${anoDeLancamento}
-      Duração (hs): ${duracao}
-      Atores: ${atores.join(', ')}
-      Status: ${emCartaz ? "Em cartaz" : "Não está em cartaz"}
-    `
+    Título: ${titulo}
+    Código: ${codigo}
+    Ano: ${anoDeLancamento}
+    Duração (hs): ${duracao}
+    Atores: ${atores.join(', ')}
+    Status: ${emCartaz ? "Em cartaz" : "Não está em cartaz"}
+  `
 }
 
 const listarTodosOsFilmes = () => {
