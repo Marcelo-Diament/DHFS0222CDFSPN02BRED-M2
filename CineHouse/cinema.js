@@ -3,7 +3,7 @@ const catalogo = require('./database/catalogo.json')
 const cinema = "CineMarco"
 // console.log(cinema)
 
-const adicionarFilme = filme => catalogo.push(catalogo)
+const adicionarFilme = filme => catalogo.push(filme)
 const testarAdicionarFilme = () => {
   console.log(`Antes da adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
   adicionarFilme({
