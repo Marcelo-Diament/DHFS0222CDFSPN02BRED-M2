@@ -139,6 +139,14 @@ Práticas referentes a Aula 03
 
 Registro de alterações (em ordem cronológica decrescente).
 
+### Hotfix | Ajustando a função `adicionarFilme`
+
+* **doc: [#M2] Atualizando changelog com o HotFix**
+_Atualizando o changelog._
+
+* **hotfix: [#M2] Ajustando a função `adicionarFilme`**
+_Ajustando a função `adicionarFilme` - estava adicionando o catálogo ao invés do filme recebido como argumento._
+
 ### Módulo 02 - Aula 03 - CineHouse | Parte 02
 
 * **doc: [#M2A03-pt02] Atualizando changelog da Parte 02 da Aula 03 do Módulo 02**
