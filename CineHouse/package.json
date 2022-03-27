@@ -4,7 +4,8 @@
   "description": "Prática CineHouse do módulo 02 - Introdução ao Node e JavaScript'",
   "main": "cinema.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node cinema.js",
+    "dev": "nodemon cinema.js"
   },
   "keywords": [
     "node",
@@ -12,7 +13,7 @@
   ],
   "author": "Marcelo Diament",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
