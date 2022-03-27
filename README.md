@@ -8,6 +8,8 @@ ___
 
 Pôr em prática os conceitos aprendidos ao longo do módulo "Introdução ao Node e JavaScript" através das práticas propostas no PG.
 
+___
+
 ## Pré Requisitos
 
 O que é necessário para acompanhar a prática?
@@ -20,7 +22,9 @@ O que é necessário para acompanhar a prática?
 
 * Assistir as aulas síncronas
 
-## Enunciados
+___
+
+## Enunciados e Respostas
 
 Replicação dos enunciados para facilitar a compreensão dos exercícios.
 
@@ -319,23 +323,263 @@ Práticas referentes a Aula 03
 
 * Chegou o momento de deixarmos de utilizar o objeto literal integrado ao arquivo principal. Vamos modularizar essa nossa base de informações de filmes. Para isso crie, na pasta raíz do projeto, uma nova pasta chamada *database* (aqui será alocado qualquer arquivo que nos sirva como base de informações a serem consultadas).
 
+```sh
+mkdir database
+```
+
 * Crie, dentro da pasta, um arquivo chamado *catalogo.json*.
+
+```sh
+cd database && touch catalogo.json && code ./catalogo.json
+```
 
 * Passe para esse arquivo todos os registros criados por você no arquivo *cinema.js*. E exclua o objeto `catalogo` do arquivo citado.
 
 > Lembre-se de que a forma de escrita de objeto para JSON, apesar de serem bem parecidas, não são iguais.
 
+```json
+{
+  "name": "cinehouse",
+  "version": "1.0.0",
+  "description": "Prática CineHouse do módulo 02 - Introdução ao Node e JavaScript'",
+  "main": "cinema.js",
+  "scripts": {
+    "start": "node cinema.js",
+    "dev": "nodemon cinema.js"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Marcelo Diament",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
+[
+  {
+    "codigo": 1,
+    "titulo": "O Poderoso Chefão",
+    "duracao": 2.91,
+    "atores": [
+      "Al Pacino",
+      "Marlon Brando",
+      "Diane Keaton",
+      "Robert De Niro"
+    ],
+    "anoDeLancamento": 1972,
+    "emCartaz": true
+  },
+  {
+    "codigo": 2,
+    "titulo": "O Mágico de Oz",
+    "duracao": 1.86,
+    "atores": [
+      "Judy Garland",
+      "Jack Haley",
+      "Bert Lahr",
+      "Frank Morgan"
+    ],
+    "anoDeLancamento": 1939,
+    "emCartaz": false
+  }
+]
+```
+
 * Perceba que ainda precisaremos das informações dos filmes para que as funções criadas no arquivo *cinema.js* funcione. Para isso você deve importar o arquivo JSON e armazená-los em uma variável.
 
+```js
+const catalogo = require('./database/catalogo.json')
+```
+
 * Teste as funções novamente certificando-se de que a migração de arquivo e formato não prejudicou seu funcionamento.
+
+```sh
+node cinema.js
+```
 
 #### Parte 02
 
 * `listarTodosOsFilmes` | A função deve percorrer toda a lista de filmes armazenada no catálogo utilizando o *loop* `for` e retornar as informações de maneira amigável ao usuário.
 
+```js
+const listarTodosOsFilmes = () => {
+    for (let filme of catalogo) {
+        console.log(`
+      Título: ${filme.titulo}
+      Código: ${filme.codigo}
+      Ano: ${filme.anoDeLancamento}
+      Duração (hs): ${filme.duracao}
+      Atores: ${filme.atores.join(', ')}
+      Status: ${filme.emCartaz ? "Em cartaz" : "Não está em cartaz"}
+    `)
+    }
+}
+const testarListarTodosOsFilmes = () => listarTodosOsFilmes()
+testarListarTodosOsFilmes()
+```
+
 * `listarFilmesEmCartaz` | A função deve percorrer toda a lista de filmes armazenada no catálogo utilizando o *loop* `for` e retornar os filmes disponíveis em cartaz - as informações de maneira amigável ao usuário.
 
+```js
+const listarFilmesEmCartaz = () => {
+    for (let filme of catalogo) {
+        if (filme.emCartaz) {
+            console.log(`
+        Título: ${filme.titulo}
+        Código: ${filme.codigo}
+        Ano: ${filme.anoDeLancamento}
+        Duração (hs): ${filme.duracao}
+        Atores: ${filme.atores.join(', ')}
+        Status: ${filme.emCartaz ? "Em cartaz" : "Não está em cartaz"}
+      `)
+        }
+    }
+}
+const testarListarFilmesEmCartaz = () => listarFilmesEmCartaz()
+testarListarFilmesEmCartaz()
+```
+
 * `alterarStatusEmCartaz` | A função deve receber como parâmetro o número identificador do filme escolhido, buscar o filme com base no parâmetro recebido e alterar o status existente da propriedade `emCartaz` (se estava como `true`, alterar para `false`, e vice e versa). O escopo é igual ao da aula passada, porém o desafio é ao invés de usarmos a estrutura condicional `if` que estamos habituados, mudar para `if` ternário.
+
+```js
+const alterarStatusEmCartaz = codigo => {
+    for (let filme of catalogo) {
+        if (filme.codigo === codigo) {
+            console.log(`Status do filme ${filme.titulo} (código ${codigo}) antes: ${filme.emCartaz}`)
+            filme.emCartaz = filme.emCartaz ? false : true
+            console.log(`Status do filme ${filme.titulo} (código ${codigo}) depois: ${filme.emCartaz}`)
+        }
+    }
+}
+const testarAlterarStatusEmCartaz = () => {
+    alterarStatusEmCartaz(1)
+    alterarStatusEmCartaz(2)
+}
+testarAlterarStatusEmCartaz()
+```
+
+### Refatoração
+
+Algumas melhorias aplicadas, de acordo com o conteúdo apresentado no módulo.
+
+**CineHouse/cinema.js**
+
+```js
+const catalogo = require('./database/catalogo.json')
+
+// const cinema = "CineMarco"
+// console.log(cinema)
+
+const adicionarFilme = filme => catalogo.push(filme)
+const testarAdicionarFilme = () => {
+    console.log(`Antes da adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
+    adicionarFilme({
+        codigo: 3,
+        titulo: "Cidadão Kane",
+        duracao: 1.98,
+        atores: ["Orson Welles", "Joseph Cotten", "Dorothy Comingore", "William Alland"],
+        anoDeLancamento: 1941,
+        emCartaz: false
+    })
+    console.log(`Após adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
+}
+// testarAdicionarFilme()
+
+const buscarFilme = codigo => {
+    let resultado = catalogo.filter(filme => filme.codigo == codigo)[0]
+    console.log(resultado ? `O filme de código ${codigo} se chama ${resultado.titulo}` : `Não existe filme cujo código seja ${codigo}`)
+    return resultado
+}
+const testarBuscarFilme = () => {
+    buscarFilme(1)
+    buscarFilme(2)
+    buscarFilme(3)
+}
+// testarBuscarFilme()
+
+const alterarStatusEmCartaz = codigo => {
+    let resultado = buscarFilme(codigo)
+    if (resultado && resultado.titulo) {
+        let {
+            titulo,
+            emCartaz
+        } = resultado
+        console.log(`Status do filme ${titulo} (código ${codigo}) antes: ${emCartaz}`)
+        emCartaz = !emCartaz
+        console.log(`Status do filme ${titulo} (código ${codigo}) depois: ${emCartaz}`)
+    }
+    return resultado
+}
+const testarAlterarStatusEmCartaz = () => {
+    alterarStatusEmCartaz(1)
+    alterarStatusEmCartaz(2)
+    alterarStatusEmCartaz(3)
+}
+// testarAlterarStatusEmCartaz()
+
+// Função de Apoio
+const mostrarDetalhesFilme = filme => {
+    const {
+        titulo,
+        codigo,
+        anoDeLancamento,
+        duracao,
+        atores,
+        emCartaz
+    } = filme
+    return `
+    Título: ${titulo}
+    Código: ${codigo}
+    Ano: ${anoDeLancamento}
+    Duração (hs): ${duracao}
+    Atores: ${atores.join(', ')}
+    Status: ${emCartaz ? "Em cartaz" : "Não está em cartaz"}
+  `
+}
+
+const listarTodosOsFilmes = () => {
+    catalogo.forEach(filme => console.log(mostrarDetalhesFilme(filme)))
+}
+const testarListarTodosOsFilmes = () => listarTodosOsFilmes()
+// testarListarTodosOsFilmes()
+
+const listarFilmesEmCartaz = () => {
+    const filmesEmCartaz = catalogo.filter(filme => filme.emCartaz)
+    for (let filme of filmesEmCartaz) {
+        console.log(mostrarDetalhesFilme(filme))
+    }
+}
+const testarListarFilmesEmCartaz = () => listarFilmesEmCartaz()
+// testarListarFilmesEmCartaz()
+```
+
+**CineHouse/package.json**
+
+```json
+{
+  "name": "cinehouse",
+  "version": "1.0.0",
+  "description": "Prática CineHouse do módulo 02 - Introdução ao Node e JavaScript'",
+  "main": "cinema.js",
+  "scripts": {
+    "start": "node cinema.js",
+    "dev": "nodemon cinema.js"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Marcelo Diament",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
+```
+
+___
 
 ## Changelog
 
