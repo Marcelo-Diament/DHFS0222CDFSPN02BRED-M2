@@ -47,3 +47,18 @@ const testarBuscarFilme = () => {
   buscarFilme(2)
 }
 // testarBuscarFilme()
+
+const alterarStatusEmCartaz = codigo => {
+  for (let filme of catalogo) {
+    if (filme.codigo === codigo) {
+      console.log(`Status do filme ${filme.titulo} (código ${codigo}) antes: ${filme.emCartaz}`)
+      filme.emCartaz = !filme.emCartaz
+      console.log(`Status do filme ${filme.titulo} (código ${codigo}) depois: ${filme.emCartaz}`)
+    }
+  }
+}
+const testarAlterarStatusEmCartaz = () => {
+  alterarStatusEmCartaz(1)
+  alterarStatusEmCartaz(2)
+}
+// testarAlterarStatusEmCartaz()
