@@ -14,3 +14,6 @@ console.log(`Função multiplicar recebendo 0 e 0 retorna: ${multiplicar(0,0)}`)
 
 console.log(`Função dividir recebendo 10 e 2 retorna: ${dividir(10,2)}`)
 console.log(`Função dividir recebendo 0 e 10 retorna: ${dividir(0,10)}`)
+
+console.log(`Função dividir recebendo 10 e 0 retorna: ${dividir(10,0)}`)
+console.log(`Função dividir recebendo 0 e 0 retorna: ${dividir(0,0)}`)
