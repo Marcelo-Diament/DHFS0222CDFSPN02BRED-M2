@@ -20,3 +20,18 @@ const catalogo = [
     emCartaz: false
   }
 ]
+
+const adicionarFilme = filme => catalogo.push(catalogo)
+const testarAdicionarFilme = () => {
+  console.log(`Antes da adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
+  adicionarFilme({
+      codigo: 3,
+      titulo: "Cidadão Kane",
+      duracao: 1.98,
+      atores: ["Orson Welles", "Joseph Cotten", "Dorothy Comingore", "William Alland"],
+      anoDeLancamento: 1941,
+      emCartaz: false
+  })
+  console.log(`Após adição do novo filme ao catálogo, o catálogo possui ${catalogo.length} filmes.`)
+}
+// testarAdicionarFilme()
