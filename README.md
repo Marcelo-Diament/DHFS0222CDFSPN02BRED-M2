@@ -26,7 +26,7 @@ Replicação dos enunciados para facilitar a compreensão dos exercícios.
 
 ### Módulo 02 | Aula 01
 
-Práticas referentes à Aula 01
+Práticas referentes a Aula 01
 
 #### Parte 01
 
@@ -48,9 +48,75 @@ Práticas referentes à Aula 01
 
 * Analisar a pasta *node_modules*
 
+### Módulo 02 | Aula 02
+
+Práticas referentes a Aula 02
+
+#### Parte 01
+
+* No arquivo criado na última aula (*cinema.js*), deve ser criada uma variável do tipo *array* chamada catalogo. Esta será um *array* de objetos, onde cada objeto representará um filme.
+
+* O filme deve conter os seguintes atributos:
+
+  a. `codigo` (numérico - identificador do filme)
+
+  b. `titulo` (*string*)
+
+  c. `duracao` (numérico - em horas)
+
+  d. `atores` (*array* de *strings* - nomes)
+
+  e. `anoDeLancamento` (numérico)
+
+  f. `emCartaz` (*booleano*)
+
+* Deverão ser criados dois registros de filmes (de acordo com sua preferência). É importante apenas que um deles receba o valor de `true` na propriedade `emCartaz` e o outro o valor `false`.
+
+#### Parte 02
+
+* `adicionarFilme` | A função deve receber os parâmetros com as informações necessárias para criar um objeto do tipo Filme.
+
+* `buscarFilme` | A função deve receber como parâmetro o número identificador do filme e fazer busca no *array* de catálogo e ao fim retornar o objeto encontrado. Preferencialmente, retorne de forma mais amigável ao usuário final (pode utilizar `console` para não retornar apenas o objeto).
+
+* `alterarStatusEmCartaz` | A função deve receber como parâmetro o número identificador do filme escolhido, buscar o filme com base no parâmetro recebido e alterar o status existente da propriedade `emCartaz` (se estava como `true`, alterar para `false`, e vice e versa).
+
+#### Parte 03
+
+* Criar uma pasta nova - *Calculadora* - (separa dos projetos anteriores para perdermos onde essa prática será feita).
+
+* Criar um arquivo *somar.js* que contenha uma função chamada `somar`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a soma dos mesmos.
+
+* Criar um arquivo *subtrair.js* que contenha uma função chamada `subtrair`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a diferença entre eles.
+
+* Criar um arquivo *multiplicar.js* que contenha uma função chamada `multiplicar`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a multiplicação dos mesmos.
+
+* Criar um arquivo *dividir.js* que contenha uma função chamada `dividir`, a qual deve ser exportada ao final do arquivo. Esta função deve receber 2 parâmetros e retornar a divisão dos mesmos. Importante: contemplar o cenário em que se algum dos dois parâmetros é zero, a função
+retornará "Não se pode dividir por zero".
+
+> **ERRATA**: na realidade, apenas o segundo parâmetro não pode ser 0. Isso por que não se pode dividir um número por 0, mas **é possível dividir 0 por qualquer número (que não seja 0)**.
+
+#### Parte 04
+
+* Criar um arquivo *calculadora.js* (`touch calculadora.js`), em que devemos importar os quatro arquivos feitos anteriormente.
+
+* Executar a função que permite somar e a função que permite subtrair, passando como argumentos dois números quaisquer. Mostrar no *console* os resultados.
+
+* Executar a função que permite multiplicar, passando como argumentos dois números quaisquer. Mostrar no *console* o resultado.
+
+* Executar a função que permite multiplicar, passando agora como um dos dois argumentos, o número zero. Mostrar no *console* o resultado.
+
+* Executar a função que permite dividir, passando como argumentos dois números quaisquer. Mostrar no *console* o resultado.
+
+* Executar a função que permite dividir, passando agora como um dos dois argumentos, o número zero. Mostrar no *console* o resultado.
+
 ## Changelog
 
 Registro de alterações (em ordem cronológica decrescente).
+
+### Módulo 02 - Aula 02 - CineHouse e Calculadora | Extra
+
+* **doc: [#M2A02] Adicionando enunciados da Aula 02 do Módulo 02**
+_Adicionando os enunciados da Aula 02 do Módulo 02 (projetos CineHouse e Calculadora) e atualizando o changelog._
 
 ### Módulo 02 - Aula 01 - CineHouse | Extra
 
