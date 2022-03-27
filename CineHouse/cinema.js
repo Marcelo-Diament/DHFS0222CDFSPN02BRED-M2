@@ -45,3 +45,18 @@ const testarAlterarStatusEmCartaz = () => {
   alterarStatusEmCartaz(2)
 }
 // testarAlterarStatusEmCartaz()
+
+const listarTodosOsFilmes = () => {
+  for (let filme of catalogo) {
+    console.log(`
+      Título: ${filme.titulo}
+      Código: ${filme.codigo}
+      Ano: ${filme.anoDeLancamento}
+      Duração (hs): ${filme.duracao}
+      Atores: ${filme.atores.join(', ')}
+      Status: ${filme.emCartaz ? "Em cartaz" : "Não está em cartaz"}
+    `)
+  }
+}
+const testarListarTodosOsFilmes = () => listarTodosOsFilmes()
+// testarListarTodosOsFilmes()
