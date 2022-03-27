@@ -60,3 +60,20 @@ const listarTodosOsFilmes = () => {
 }
 const testarListarTodosOsFilmes = () => listarTodosOsFilmes()
 // testarListarTodosOsFilmes()
+
+const listarFilmesEmCartaz = () => {
+  for (let filme of catalogo) {
+    if (filme.emCartaz) {
+      console.log(`
+        Título: ${filme.titulo}
+        Código: ${filme.codigo}
+        Ano: ${filme.anoDeLancamento}
+        Duração (hs): ${filme.duracao}
+        Atores: ${filme.atores.join(', ')}
+        Status: ${filme.emCartaz ? "Em cartaz" : "Não está em cartaz"}
+      `)
+    }
+  }
+}
+const testarListarFilmesEmCartaz = () => listarFilmesEmCartaz()
+// testarListarFilmesEmCartaz()
