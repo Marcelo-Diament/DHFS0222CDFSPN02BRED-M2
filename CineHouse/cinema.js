@@ -21,28 +21,31 @@ const testarAdicionarFilme = () => {
 const buscarFilme = codigo => {
   let resultado = catalogo.filter(filme => filme.codigo == codigo)[0]
   console.log(resultado ? `O filme de código ${codigo} se chama ${resultado.titulo}` : `Não existe filme cujo código seja ${codigo}`)
+  return resultado
 }
 const testarBuscarFilme = () => {
   buscarFilme(1)
   buscarFilme(2)
   buscarFilme(3)
 }
-testarBuscarFilme()
+// testarBuscarFilme()
 
 const alterarStatusEmCartaz = codigo => {
-  for (let filme of catalogo) {
-    if (filme.codigo === codigo) {
-      console.log(`Status do filme ${filme.titulo} (código ${codigo}) antes: ${filme.emCartaz}`)
-      filme.emCartaz = filme.emCartaz ? false : true
-      console.log(`Status do filme ${filme.titulo} (código ${codigo}) depois: ${filme.emCartaz}`)
-    }
+  let resultado = buscarFilme(codigo)
+  if (resultado && resultado.titulo) {
+    let { titulo, emCartaz } = resultado
+    console.log(`Status do filme ${titulo} (código ${codigo}) antes: ${emCartaz}`)
+    emCartaz = !emCartaz
+    console.log(`Status do filme ${titulo} (código ${codigo}) depois: ${emCartaz}`)
   }
+  return resultado
 }
 const testarAlterarStatusEmCartaz = () => {
   alterarStatusEmCartaz(1)
   alterarStatusEmCartaz(2)
+  alterarStatusEmCartaz(3)
 }
-// testarAlterarStatusEmCartaz()
+testarAlterarStatusEmCartaz()
 
 const listarTodosOsFilmes = () => {
   for (let filme of catalogo) {
