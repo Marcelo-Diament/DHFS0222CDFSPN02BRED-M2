@@ -26,6 +26,31 @@ Registro de alterações (em ordem cronológica decrescente).
 
 ### Módulo 02 - Aula 02 - Calculadora | Extra
 
+* **doc: [#M2A02-pt04] Adicionando documentação**
+_Adicionando detalhes sobre as etapas realizadas na parte 04, Calculadora (changelog)._
+
+### Módulo 02 - Aula 02 - Calculadora | Parte 04
+
+* **feat: [#M2A02-pt04] Executando `dividir` - com num2 recebendo 0 - em calculadora.js**
+_Movendo o teste de dividir.js (usando num2 como 0) para calculadora.js._
+
+* **feat: [#M2A02-pt04] Executando `dividir` em calculadora.js**
+_Importando o arquivo dividir.js e movendo o teste de dividir.js para calculadora.js._
+
+* **feat: [#M2A02-pt04] Executando `multiplicar` em calculadora.js**
+_Importando o arquivo multiplicar.js e movendo o teste de multiplicar.js para calculadora.js._
+
+* **feat: [#M2A02-pt04] Executando `subtrair` em calculadora.js**
+_Importando o arquivo subtrair.js e movendo o teste de subtrair.js para calculadora.js._
+
+* **feat: [#M2A02-pt04] Executando `somar` em calculadora.js**
+_Importando o arquivo somar.js e movendo o teste de somar.js para calculadora.js._
+
+* **feat: [#M2A02-pt04] Adicionando arquivo calculadora.js**
+_Criando o arquivo `calculadora.js`._
+
+### Módulo 02 - Aula 02 - Calculadora | Extra
+
 * **fix: [#M2A02-pt03] Ajustando título da etapa de documentaçao da Calculadora no changelog**
 _Atualizando o título "Módulo 02 - Aula 02 - Calculadora | Extra" e atualizando o changelog._
 
