@@ -47,32 +47,29 @@ const testarAlterarStatusEmCartaz = () => {
 }
 // testarAlterarStatusEmCartaz()
 
+// Função de Apoio
+const mostrarDetalhesFilme = filme => {
+  const { titulo, codigo, anoDeLancamento, duracao, atores, emCartaz } = filme
+  return `
+      Título: ${titulo}
+      Código: ${codigo}
+      Ano: ${anoDeLancamento}
+      Duração (hs): ${duracao}
+      Atores: ${atores.join(', ')}
+      Status: ${emCartaz ? "Em cartaz" : "Não está em cartaz"}
+    `
+}
+
 const listarTodosOsFilmes = () => {
-  const mostrarDetalhesFilme = filme => `
-    Título: ${filme.titulo}
-    Código: ${filme.codigo}
-    Ano: ${filme.anoDeLancamento}
-    Duração (hs): ${filme.duracao}
-    Atores: ${filme.atores.join(', ')}
-    Status: ${filme.emCartaz ? "Em cartaz" : "Não está em cartaz"}
-  `
   catalogo.forEach(filme => console.log(mostrarDetalhesFilme(filme)))
 }
 const testarListarTodosOsFilmes = () => listarTodosOsFilmes()
 // testarListarTodosOsFilmes()
 
 const listarFilmesEmCartaz = () => {
-  for (let filme of catalogo) {
-    if (filme.emCartaz) {
-      console.log(`
-        Título: ${filme.titulo}
-        Código: ${filme.codigo}
-        Ano: ${filme.anoDeLancamento}
-        Duração (hs): ${filme.duracao}
-        Atores: ${filme.atores.join(', ')}
-        Status: ${filme.emCartaz ? "Em cartaz" : "Não está em cartaz"}
-      `)
-    }
+  const filmesEmCartaz = catalogo.filter(filme => filme.emCartaz)
+  for (let filme of filmesEmCartaz) {
+    console.log(mostrarDetalhesFilme(filme))
   }
 }
 const testarListarFilmesEmCartaz = () => listarFilmesEmCartaz()
