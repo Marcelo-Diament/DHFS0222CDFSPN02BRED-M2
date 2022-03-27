@@ -139,6 +139,23 @@ Práticas referentes a Aula 03
 
 Registro de alterações (em ordem cronológica decrescente).
 
+### Módulo 02 - Aula 03 - CineHouse | Parte 02
+
+* **doc: [#M2A03-pt02] Atualizando changelog da Parte 02 da Aula 03 do Módulo 02**
+_Atualizando o changelog._
+
+* **fix: [#M2A03-pt02] Comentando `testarAlterarStatusEmCartaz`**
+_Comentando o teste `testarAlterarStatusEmCartaz`._
+
+* **feat: [#M2A03-pt02] Usando `if` ternário na função `alterarStatusEmCartaz`**
+_Atualizando a função `alterarStatusEmCartaz` para usar o `if` ternário (ainda que a solução anterior fosse mais enxuta) e testando._
+
+* **feat: [#M2A03-pt02] Adicionando função `listarFilmesEmCartaz`**
+_Adicionando a função `listarFilmesEmCartaz` e testando._
+
+* **feat: [#M2A03-pt02] Adicionando função `listarTodosOsFilmes`**
+_Adicionando a função `listarTodosOsFilmes` e testando._
+
 ### Módulo 02 - Aula 03 - CineHouse | Parte 01
 
 * **doc: [#M2A03-pt01] Atualizando changelog da Parte 01 da Aula 03 do Módulo 02**
