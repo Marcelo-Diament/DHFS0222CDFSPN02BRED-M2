@@ -1,3 +1,5 @@
+const catalogo = require('./database/catalogo.json')
+
 const cinema = "CineMarco"
 // console.log(cinema)
 
