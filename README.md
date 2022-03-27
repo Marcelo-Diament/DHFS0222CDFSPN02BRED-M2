@@ -1,5 +1,7 @@
 # DHFS0222CDFSPN02BRED-M2
 
+![Módulo 02 | Introdução ao NodeJS](https://repository-images.githubusercontent.com/474757409/ffa632d4-d203-4a28-8fb1-1a7f2b55f8ad)
+
 Resolução prática PG do módulo 02 - Introdução a Node e JavaScript - da turma FS0222CDFSPN02BRED
 
 ___
