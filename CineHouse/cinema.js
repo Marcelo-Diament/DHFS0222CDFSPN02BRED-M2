@@ -44,7 +44,7 @@ const testarAlterarStatusEmCartaz = () => {
   alterarStatusEmCartaz(1)
   alterarStatusEmCartaz(2)
 }
-testarAlterarStatusEmCartaz()
+// testarAlterarStatusEmCartaz()
 
 const listarTodosOsFilmes = () => {
   for (let filme of catalogo) {
